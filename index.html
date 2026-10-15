@@ -50,7 +50,7 @@ nav div{flex:1;text-align:center;padding:8px 0;font-size:11px;color:var(--sub)}n
 .sh div,.sh label{display:block;padding:15px 22px;font-size:16px;cursor:pointer}.sh input,.sh textarea{width:calc(100% - 44px);margin:6px 22px;padding:10px;border:1px solid var(--ln);border-radius:6px;background:var(--bg);color:var(--fg);font:inherit}.sh textarea{height:40vh}
 .sh .ok{color:var(--ac);font-weight:700;text-align:right}.sh .dg{color:#d32f2f}
 #toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#333;color:#fff;padding:8px 16px;border-radius:20px;font-size:13px;display:none;z-index:10}
-
+ 
 :root{--wood:#cf9446}
 #bw{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.03 0.5' numOctaves='3' seed='8'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.17 0 0 0 0 0.03 1.3 0 0 0 -0.4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),var(--wood);padding:6px 4px}
 #bd{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.02 0.45' numOctaves='3' seed='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.55 0 0 0 0 0.36 0 0 0 0 0.1 1.1 0 0 0 -0.35'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),#f1cf8c}
@@ -274,7 +274,7 @@ $('#b0').onclick=()=>{cur=g.root;sel=null;rGame()};$('#b1').onclick=()=>{if(cur.
 $('#b2').onclick=()=>{if(cur.ch[0]){cur=cur.ch[0];sel=null;rGame()}};$('#b3').onclick=()=>{while(cur.ch[0])cur=cur.ch[0];sel=null;rGame()};
 $('#fl').onclick=()=>{flip=!flip;rGame()};$('#tb').onclick=()=>show('tree');$('#t1').onclick=()=>{tab=1;rGame()};$('#ba').onclick=()=>{tab=tab===2?1:2;rGame()};
 setSt('off');$('#cs').onclick=()=>{if(!cdb){window.fbLogin?window.fbLogin():toast('Firebaseの設定が未入力です')}else sheet([[(window.fbUser||'')+' でログイン中',()=>{}],['今すぐ同期',()=>sync()],['ログアウト',()=>window.fbLogout()]])};
-const ENGINE_URL='engine/yaneuraou.js';
+const ENGINE_URLS=['engine/yaneuraou.halfkp.js','engine/yaneuraou.halfkp.noeval.js','engine/yaneuraou.js'];
 const EN={yn:null,ready:false,busy:false,pend:false,last:null,auto:true,ms:3000,src:'内蔵',node:null};let AN=null;
 const DEF=()=>({mode:'movetime',t:3,n:2000000,d:16,th:Math.min(navigator.hardwareConcurrency||2,4),hash:(navigator.deviceMemory||4)>=8?256:128,mpv:1});
 const ST=Object.assign(DEF(),(()=>{try{return JSON.parse(localStorage.getItem('enst')||'{}')}catch(e){return{}}})());
@@ -326,10 +326,11 @@ const tx=sc.mate!=null?(sc.mate*k>0?'先手':'後手')+'の'+Math.abs(sc.mate)+'
 e.innerHTML=`<div style="font-size:22px;font-weight:700">${tx}</div><div style="height:8px;background:#222;border-radius:4px;overflow:hidden;margin:4px 0"><div style="width:${pct}%;height:100%;background:#fff"></div></div><div>深さ ${AN.depth}${EN.busy?'（解析中…）':''}</div><div style="margin:6px 0">最善手: <b>${pv[0]||'-'}</b></div><div class="pvb">#読み筋［深さ${AN.depth}］${pv.join(' ')}</div>${ot}`+(AN.best?'<div class="sib" id="enp" style="margin-top:8px;border-radius:6px">最善手を棋譜に追加</div>':'');
 const b=$('#enp');if(b)b.onclick=()=>addMove(fromUsi(AN.best))}
 async function enStart(){const o=$('#ens'),say=t=>o.textContent=t;try{say('エンジン読み込み中…');
-await new Promise((ok,ng)=>{const sc=document.createElement('script');sc.src=ENGINE_URL;sc.onload=ok;sc.onerror=()=>ng(new Error(ENGINE_URL+' が見つかりません'));document.head.append(sc)});
-if(typeof YaneuraOu!=='function')throw new Error('YaneuraOu() が見つかりません');
+let ld=false;for(const u of ENGINE_URLS){ld=await new Promise(ok=>{const sc=document.createElement('script');sc.src=u;sc.onload=()=>ok(true);sc.onerror=()=>{sc.remove();ok(false)};document.head.append(sc)});if(ld)break}
+if(!ld)throw new Error('engine/ フォルダにエンジンが見つかりません');
+const fk=Object.keys(window).find(k=>/^YaneuraOu/i.test(k)&&typeof window[k]==='function');if(!fk)throw new Error('エンジンの読み込み関数が見つかりません');EN.F=window[fk];
 if(!self.crossOriginIsolated)say('警告: COOP/COEPヘッダーが未設定です。起動に失敗する場合があります。');
-const yn=await YaneuraOu();EN.yn=yn;yn.addMessageListener(onLine);const P=t=>yn.postMessage(t),W=k=>new Promise(r=>{EN.w=l=>{if(l.startsWith(k)){EN.w=null;r()}}});
+const yn=await EN.F();EN.yn=yn;yn.addMessageListener(onLine);const P=t=>yn.postMessage(t),W=k=>new Promise(r=>{EN.w=l=>{if(l.startsWith(k)){EN.w=null;r()}}});
 let w=W('usiok');P('usi');await w;EN.src='内蔵';const nn=await idb('readonly','nn').catch(()=>null);
 if(nn){if(yn.FS&&yn.FS.writeFile){try{yn.FS.mkdir('/eval')}catch(e){}yn.FS.writeFile('/eval/nn.bin',new Uint8Array(nn));P('setoption name EvalDir value /eval');EN.src='nn.bin(水匠5)'}else say('このエンジンはファイルシステムを公開していないため、nn.binを渡せません。内蔵評価関数で動作します。')}
 const mem=navigator.deviceMemory||4;P('setoption name USI_Ponder value false');P('setoption name USI_OwnBook value false');sendOpts(P);
