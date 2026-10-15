@@ -19,7 +19,7 @@ main{flex:1;min-height:0;display:flex;flex-direction:column;position:relative}
 .fab{position:absolute;right:16px;bottom:76px;width:56px;height:56px;border-radius:16px;background:var(--hd);color:var(--hdt);border:0;font-size:28px;box-shadow:0 3px 8px #0004;cursor:pointer}
 nav{display:flex;border-top:1px solid var(--ln);flex:none;background:var(--card)}
 nav div{flex:1;text-align:center;padding:8px 0;font-size:11px;color:var(--sub)}nav div span{display:block;font-size:20px}nav .a{color:var(--ac)}
-.hand{display:flex;flex-direction:column;align-items:center;gap:3px;width:42px;flex:none;padding-top:14px}#h1{justify-content:flex-end}
+.hand{display:flex;flex-direction:column;align-items:center;gap:3px;width:54px;flex:none;padding-top:14px}#h1{justify-content:flex-end}
 .hp{position:relative;background:none;border:0;padding:2px 6px 2px 8px;cursor:pointer;border-radius:6px}.hp.s{background:var(--bd)}.hp .pc{font-size:20px;display:block}
 .cnt{position:absolute;left:-1px;top:-1px;font-size:13px;font-weight:700;color:var(--fg)}
 #bw{display:flex;justify-content:center;padding:0 2px;flex:none}
@@ -57,22 +57,50 @@ nav div{flex:1;text-align:center;padding:8px 0;font-size:11px;color:var(--sub)}n
 #bd .c{background:transparent;border-color:rgba(50,30,8,.8);container-type:inline-size}
 #bd .c.l{background:rgba(110,70,15,.32)}#bd .c.sl{background:rgba(255,196,60,.6);outline:2px solid #e07b00}
 #bd .lb{background:var(--wood);color:#4a2f0c;font-weight:600;font-size:12px}
-.pc{clip-path:none;padding:6% 0 0;width:80%;height:88%;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 112' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23fbe7b0'/%3E%3Cstop offset='1' stop-color='%23e8bd68'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpolygon points='50,2 88,20 97,110 3,110 12,20' fill='url(%23g)' stroke='%237a5520' stroke-width='2.5' stroke-linejoin='round'/%3E%3Cpolygon points='50,9 82,24 90,103 10,103 18,24' fill='none' stroke='%23fff6d6' stroke-opacity='.55' stroke-width='1.5'/%3E%3C/svg%3E") center/100% 100% no-repeat;filter:drop-shadow(0 1.5px 1px rgba(40,20,0,.45));display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--pf,'Yuji Boku'),'Hiragino Mincho ProN','Yu Mincho','Noto Serif JP',serif;font-weight:400;font-size:29cqw;line-height:1.02;color:#1c1006}
+.pc{clip-path:none;padding:6% 0 0;width:80%;height:88%;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 112' preserveAspectRatio='none'%3E%3Cpolygon points='50,2 88,20 97,110 3,110 12,20' fill='%23f1d38f' stroke='%237a5520' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% 100% no-repeat;filter:drop-shadow(0 1.5px 1px rgba(40,20,0,.45));display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--pf,'Shoryu'),'Shoryu','Yuji Boku','Hiragino Mincho ProN','Yu Mincho','Noto Serif JP',serif;font-weight:400;font-size:38cqw;line-height:1;color:#1c1006}
 .pc i{font-style:normal;display:block}
-.hp .pc{width:32px;height:36px;font-size:14px;display:flex}
+.hp .pc{width:38px;height:42px;font-size:18px;display:flex}
 #an{overflow:auto;color:var(--fg);font-size:13px;margin:0;padding:8px;flex:1;min-height:0}.ab{background:var(--hd);color:var(--hdt);border:0;border-radius:8px;padding:8px 10px;font-size:13px;margin:2px 2px 2px 0;cursor:pointer;display:inline-block}#ent{font-size:13px}
 #bd .c.bm{outline:3px solid #1e88e5;outline-offset:-3px;z-index:1}#bd .c.bf{background:rgba(30,136,229,.25)}
 .st label{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:5px 0}.st input,.st select{width:92px;font-size:13px;padding:4px}.st span input{width:84px}.st span select{width:auto}
 .gl{stroke:var(--ln);stroke-width:1}.gt{fill:var(--sub);font-size:9px}.pvb{border:2px solid #d9a45a;border-radius:14px;padding:8px 10px;margin-top:8px;line-height:1.7;background:var(--card)}
-</style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yuji+Boku&family=Yuji+Mai&family=Yuji+Syuku&family=Zen+Antique&text=%E6%AD%A9%E5%85%B5%E9%A6%99%E8%BB%8A%E6%A1%82%E9%A6%AC%E9%8A%80%E5%B0%87%E9%87%91%E7%8E%8B%E7%8E%89%E9%A3%9B%E8%A7%92%E9%BE%8D%E6%88%90%E3%81%A8%E5%85%A8%E5%9C%AD%E6%9D%8F&display=swap">
+/* ---- 画面サイズ対応 ---- */
+body{max-width:none}
+#list,#home nav{width:100%;max-width:760px;align-self:center}
+@media(min-width:800px){.fab{right:calc(50% - 364px)}}
+@media(min-width:600px) and (orientation:portrait){#bd{max-width:min(calc(100vw - 110px),58vh)}}
+@media(min-width:820px) and (min-height:560px) and (orientation:landscape){
+#game.on{display:grid;grid-template-columns:minmax(0,1fr) max(380px,34vw);grid-template-rows:minmax(0,1fr) auto;grid-template-areas:"bw mid" "ctl mid"}
+#bw{grid-area:bw;align-self:center;justify-self:center;padding:10px 8px;border-radius:6px;box-shadow:0 2px 10px #0004}
+#bd{flex:none;width:min(calc(100dvh - 150px),calc(100vw - max(380px,34vw) - 110px));max-width:none}
+#mid{grid-area:mid;border-top:0;border-left:1px solid var(--ln);min-height:0}
+#ctl{grid-area:ctl}
+.hp .pc{width:46px;height:52px;font-size:23px}.hand{width:64px}
+}
+/* ---- 解析モード（下のボタンから切替・広く表示） ---- */
+#game.am .tabs{display:none}
+#game.am #bd{max-width:34vh}
+#an{font-size:15px}.pvb{font-size:15px;line-height:1.8}
+#game.am #an{padding:8px 10px}
+@media(min-width:820px) and (min-height:560px) and (orientation:landscape){
+#game.am{grid-template-columns:minmax(0,1fr) max(460px,44vw)}
+#game.am #bd{max-width:none;width:min(calc(100dvh - 150px),calc(100vw - max(460px,44vw) - 110px))}
+}
+@font-face{font-family:'Shoryu';src:url('fonts/shoryu.woff2') format('woff2'),url('fonts/shoryu.ttf') format('truetype'),url('fonts/shoryu.otf') format('opentype');font-display:swap}
+</style><script>
+if(!self.crossOriginIsolated&&'serviceWorker' in navigator&&location.protocol==='https:'){navigator.serviceWorker.register('coi-sw.js').then(r=>{
+const go=()=>{if(!sessionStorage.getItem('coi')){sessionStorage.setItem('coi','1');location.reload()}};
+if(r.active&&!navigator.serviceWorker.controller)go();else if(!r.active)navigator.serviceWorker.addEventListener('controllerchange',go)}).catch(e=>console.warn('SW',e))}
+</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yuji+Boku&family=Yuji+Mai&family=Yuji+Syuku&family=Zen+Antique&text=%E6%AD%A9%E5%85%B5%E9%A6%99%E8%BB%8A%E6%A1%82%E9%A6%AC%E9%8A%80%E5%B0%87%E9%87%91%E7%8E%8B%E7%8E%89%E9%A3%9B%E8%A7%92%E9%BE%8D%E6%88%90%E3%81%A8%E5%85%A8%E5%9C%AD%E6%9D%8F&display=swap">
 </head><body>
 <header><button class="ib" id="bk" style="display:none">←</button><h1 id="ttl">棋譜管理</h1><button class="ib" id="cs" style="font-size:13px;width:auto;padding:0 8px">☁</button><button class="ib" id="mn">⋮</button></header>
 <main>
 <section class="v on" id="home"><div id="list"></div><button class="fab" id="fab">＋</button>
 <nav><div class="a"><span>🏠</span>ホーム</div><div data-t><span>🏋</span>棋譜トレ</div><div data-t><span>📕</span>棋書等</div><div data-t><span>⚙</span>設定</div></nav></section>
 <section class="v" id="game"><div id="bw"><div class="hand" id="h0"></div><div id="bd"></div><div class="hand" id="h1"></div></div>
-<div id="mid"><div id="ml"></div><div id="rt"><div class="tabs"><div class="a" id="t1">コメント</div><div id="t2">解析</div></div><textarea id="cm" placeholder="コメントを入力"></textarea><div id="an" style="display:none"><div id="ang"></div><div id="anr"></div><div id="anc"></div></div></div></div>
-<div id="ctl"><button id="b0">⏮</button><button id="b1">◀</button><button id="b2">▶</button><button id="b3">⏭</button><button id="fl" style="font-size:16px;font-weight:700">反転</button><button id="tb">🌲</button></div></section>
+<div id="mid"><div id="ml"></div><div id="rt"><div class="tabs"><div class="a" id="t1">コメント</div></div><textarea id="cm" placeholder="コメントを入力"></textarea><div id="an" style="display:none"><div id="ang"></div><div id="anr"></div><div id="anc"></div></div></div></div>
+<div id="ctl"><button id="b0">⏮</button><button id="b1">◀</button><button id="b2">▶</button><button id="b3">⏭</button><button id="fl" style="font-size:16px;font-weight:700">反転</button><button id="ba" style="font-size:16px;font-weight:700">解析</button><button id="tb">🌲</button></div></section>
 <section class="v" id="tree"><div id="tr"></div><div class="zb"><button id="zi">＋</button><button id="zo">−</button></div></section>
 </main><div id="toast"></div>
 <script>
@@ -87,7 +115,8 @@ function save(){if(g){g.t=Date.now();cloudSave(g)}persist()}
 const ck=id=>id.replace(/[^\w-]/g,'_'),cref=o=>cdb.doc('users/'+cuid+'/kifu/'+ck(o.id));
 function setSt(s){const b=$('#cs');if(!b)return;b.dataset.s=s;b.textContent={off:'ログイン',sync:'⟳',ok:'☁✓',err:'⚠'}[s];b.style.fontSize=s==='off'?'13px':'18px'}
 function cloudSave(o){if(!cdb)return;clearTimeout(o._tm);setSt('sync');o._tm=setTimeout(()=>push(o),800)}
-function push(o){return cref(o).set({gid:o.id,title:o.title,t:o.t,json:JSON.stringify(o.root,rep)}).then(()=>setSt('ok'),()=>setSt('err'))}
+function push(o){const j=JSON.stringify(o.root,rep);if(new Blob([j]).size>950000){setSt('err');toast('クラウド保存の上限（約1MB）を超えました');return Promise.resolve()}
+return cref(o).set({gid:o.id,title:o.title,t:o.t,json:j}).then(()=>setSt('ok'),()=>setSt('err'))}
 function tomb(o){if(cdb)cref(o).set({gid:o.id,del:true,t:Date.now()}).catch(()=>{})}
 async function sync(){if(!cdb)return;try{setSt('sync');
 const snap=await cdb.collection('users/'+cuid+'/kifu').get(),cl={};snap.docs.forEach(d=>{const x=d.data();if(x&&x.gid)cl[x.gid]=x});
@@ -124,9 +153,9 @@ if(r[5]==='打')m={drop:nm,tx:tx_,ty};else if(r[6])m={fx:+r[6],fy:+r[7],tx:tx_,t
 if(!m.drop&&!(st.b[m.fy]&&st.b[m.fy][m.fx]))break;
 const lab=label(st,m);let e=n.ch.find(c=>c.lab===lab);if(!e){e={m,lab,c:'',ch:[],par:n};n.ch.push(e)}n=e;path.push(e)}
 return root}
-function toKif(){let s='手合割：平手\n手数----指手---------消費時間--\n';
-const fm=n=>n.lab.slice(1).replace(/^(\d)([一-九])/,(a,x,y)=>String.fromCharCode(65248+ +x)+y);
-function line(n,d){const al=[];for(;n;n=n.ch[0],d++){s+=d+' '+fm(n)+'\n';if(n.c)s+='*'+n.c.replace(/\n/g,'\n*')+'\n';n.ch.slice(1).forEach(a=>al.push([a,d+1]))}
+function toKif(wa){let s='手合割：平手\n手数----指手---------消費時間--\n';
+const fm=n=>n.lab.slice(1).replace(/^(\d)([一二三四五六七八九])/,(a,x,y)=>'０１２３４５６７８９'[+x]+y);
+function line(n,d){const al=[];for(;n;n=n.ch[0],d++){s+=d+' '+fm(n)+'\n';if(n.c)s+='*'+n.c.replace(/\n/g,'\n*')+'\n';if(wa&&n.an)s+=anTxt(n);n.ch.slice(1).forEach(a=>al.push([a,d+1]))}
 al.forEach(([a,d])=>{s+='\n変化：'+d+'手\n';line(a,d)})}
 line(g.root.ch[0],1);return s}
 function show(v){view=v;['home','game','tree'].forEach(x=>$('#'+x).classList.toggle('on',x===v));$('#bk').style.display=v==='home'?'none':'';
@@ -138,18 +167,30 @@ function rHome(){const L=$('#list');L.innerHTML='';if(!G.length)L.innerHTML='<p 
 d.querySelector('b').textContent=o.title;d.onclick=()=>openGame(o);d.querySelector('button').onclick=e=>{e.stopPropagation();g=o;gMenu(true)};L.append(d)})}
 function sheet(items){const o=document.createElement('div');o.className='ov';const s=document.createElement('div');s.className='sh';
 items.forEach(([t,f,c])=>{const d=document.createElement('div');d.textContent=t;if(c)d.className=c;d.onclick=()=>{o.remove();f()};s.append(d)});o.append(s);o.onclick=e=>{if(e.target===o)o.remove()};document.body.append(o)}
-function dlg(title,val,area,ok){const o=document.createElement('div');o.className='ov';const s=document.createElement('div');s.className='sh';
+function dlg(title,val,area,ok,ta){const o=document.createElement('div');o.className='ov';const s=document.createElement('div');s.className='sh';
 s.innerHTML=`<div style="font-weight:700">${title}</div><input value="" placeholder="タイトル">${area?'<textarea placeholder="KIF形式の棋譜を貼り付け"></textarea>':''}<div class="ok">OK</div>`;
-const i=s.querySelector('input');i.value=val;s.querySelector('.ok').onclick=()=>{const t=i.value.trim()||'無題';const a=s.querySelector('textarea');o.remove();ok(t,a&&a.value)};
+const i=s.querySelector('input');i.value=val;if(ta)s.querySelector('textarea').value=ta;s.querySelector('.ok').onclick=()=>{const t=i.value.trim()||'無題';const a=s.querySelector('textarea');o.remove();ok(t,a&&a.value)};
 o.append(s);o.onclick=e=>{if(e.target===o)o.remove()};document.body.append(o)}
-const FN=[['Yuji Boku','墨痕（太い筆文字）'],['Yuji Mai','舞（流れる楷書）'],['Yuji Syuku','粛（端正な楷書）'],['Zen Antique','アンティーク明朝']];
+const FN=[['Shoryu','昇龍（fonts/shoryu.ttf などを配置）'],['Yuji Boku','墨痕（太い筆文字）'],['Yuji Mai','舞（流れる楷書）'],['Yuji Syuku','粛（端正な楷書）'],['Zen Antique','アンティーク明朝']];
 function setPF(n){document.documentElement.style.setProperty('--pf',"'"+n+"'");try{localStorage.setItem('pf',n)}catch(e){}}
 function fontMenu(){sheet(FN.map(([n,l])=>['駒の書体：'+l,()=>setPF(n)]))}
-try{const q=localStorage.getItem('pf');if(q)setPF(q)}catch(e){}
-function gMenu(home){sheet([['駒の書体を選ぶ',fontMenu],['名前を変更',()=>dlg('名前を変更',g.title,0,t=>{g.title=t;save();if(!home)$('#ttl').textContent=t;render()})],
-['KIF形式でコピー',()=>{const f=()=>toast('コピーしました');const k=toKif();navigator.clipboard?navigator.clipboard.writeText(k).then(f,()=>dlg('KIF','',1,()=>{})):toast('コピーできません')}],
+try{if(localStorage.getItem('pfv')!=='2'){localStorage.removeItem('pf');localStorage.setItem('pfv','2')}const q=localStorage.getItem('pf');if(q)setPF(q)}catch(e){}
+function anTxt(n){const a=n.an,st=getSt(n),k=st.side?-1:1,sc=a.sc,v=sc.mate!=null?(sc.mate*k>0?'先手':'後手')+Math.abs(sc.mate)+'手詰':(sc.cp*k>0?'+':'')+sc.cp*k,pv=pvJa(st,a.pv||[],8);
+return '*評価値 '+v+'（深さ'+a.depth+'）'+(a.best&&UR.test(a.best)?' 最善手 '+pvJa(st,[a.best],1)[0]:'')+'\n'+(pv.length?'*読み筋 '+pv.join(' ')+'\n':'')}
+function dl(name,text,type,bom){const b=new Blob([(bom===false?'':'\ufeff')+text],{type:type||'text/plain'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;document.body.append(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1500)}
+function copyTxt(t){const man=()=>dlg('手動でコピーしてください',g.title,1,()=>{},t);navigator.clipboard?navigator.clipboard.writeText(t).then(()=>toast('コピーしました'),man):man()}
+const fname=ext=>g.title.replace(/[\\/:*?"<>|]/g,'_')+'.'+ext;
+function exportMenu(){sheet([['棋譜のみ：コピー',()=>copyTxt(toKif(false))],['棋譜のみ：ファイル保存（.kif）',()=>dl(fname('kif'),toKif(false))],
+['解析結果つき：コピー（KIFコメント付き）',()=>copyTxt(toKif(true))],['解析結果つき：ファイル保存（.kif）',()=>dl(fname('kif'),toKif(true))],
+['全データ：ファイル保存（.json／棋譜・分岐・解析）',()=>dl(fname('json'),JSON.stringify({format:'kifu-note',version:1,title:g.title,root:g.root},rep),'application/json',false)]])}
+function importText(t,title){t=t.replace(/^\ufeff/,'').trim();let root,ti=title;
+if(t[0]==='{'){const o=JSON.parse(t);if(o.format!=='kifu-note'||!o.root)throw new Error('形式が違います');root=o.root;if(!ti||ti==='無題')ti=o.title||ti}else root=parseKif(t);
+const o=mkGame(ti||'無題',root);openGame(o);save()}
+function importFile(){const i=document.createElement('input');i.type='file';i.accept='.kif,.kifu,.json,.txt';i.onchange=async()=>{const f=i.files[0];if(!f)return;try{importText(await f.text(),f.name.replace(/\.[^.]+$/,''))}catch(e){toast('取り込めません: '+e.message)}};i.click()}
+function gMenu(home){if(!g){sheet([['駒の書体を選ぶ',fontMenu]]);return}sheet([['駒の書体を選ぶ',fontMenu],['名前を変更',()=>dlg('名前を変更',g.title,0,t=>{g.title=t;save();if(!home)$('#ttl').textContent=t;render()})],
+['書き出し・コピー',exportMenu],
 ['削除',()=>{const d=g;G=G.filter(x=>x!==g);g=null;persist();tomb(d);show('home')},'dg']])}
-$('#fab').onclick=()=>sheet([['新規作成',()=>dlg('新規棋譜','',0,t=>{const o=mkGame(t);save();openGame(o)})],['KIFテキストを取り込む',()=>dlg('KIF取り込み','',1,(t,k)=>{const o=mkGame(t,parseKif(k||''));save();openGame(o)})]]);
+$('#fab').onclick=()=>sheet([['新規作成',()=>dlg('新規棋譜','',0,t=>{const o=mkGame(t);openGame(o);save()})],['KIF／JSONテキストを取り込む',()=>dlg('取り込み','',1,(t,k)=>{try{importText(k||'',t)}catch(e){toast('取り込めません: '+e.message)}})],['ファイルから取り込む（.kif／.json）',importFile]]);
 $('#mn').onclick=()=>gMenu(false);$('#bk').onclick=()=>{if(view==='tree')show('game');else{g=null;show('home')}};
 document.querySelectorAll('[data-t]').forEach(e=>e.onclick=()=>toast('準備中です'));
 function path(){const a=[];for(let n=cur;n.par;n=n.par)a.unshift(n);for(let n=cur.ch[0];n;n=n.ch[0])a.push(n);return a}
@@ -175,7 +216,7 @@ lp(d,n,i);d.onclick=()=>{if(LPF){LPF=false;return}const br=n.par.ch.length>1;ope
 if(open===n)n.par.ch.forEach(c=>{const s=document.createElement('div');s.className='sib';s.textContent=(i+1)+'. '+c.lab+(c===n?'  ✓':'');s.onclick=()=>{cur=c;open=null;sel=null;rGame()};ml.append(s)})});
 const k=ml.querySelector('.cu');if(k)k.scrollIntoView({block:'nearest'});
 const cm=$('#cm');cm.value=cur.c||'';cm.oninput=()=>{cur.c=cm.value;save()};
-$('#t1').className=tab===1?'a':'';$('#t2').className=tab===2?'a':'';cm.style.display=tab===1?'':'none';$('#an').style.display=tab===2?'':'none';$('#ml').style.display=tab===2?'none':'';rAnr();if(EN.ready&&EN.auto&&!EN.batch&&!cur.an&&EN.last!==cur){EN.last=cur;anSoon()}}
+$('#t1').className=tab===1?'a':'';$('#game').classList.toggle('am',tab===2);$('#ba').style.background=tab===2?'rgba(255,255,255,.35)':'';cm.style.display=tab===1?'':'none';$('#an').style.display=tab===2?'':'none';$('#ml').style.display=tab===2?'none':'';rAnr();if(EN.ready&&EN.auto&&!EN.batch&&!cur.an&&EN.last!==cur){EN.last=cur;anSoon()}}
 const D={歩:[[0,-1]],桂:[[1,-2],[-1,-2]],銀:[[0,-1],[1,-1],[-1,-1],[1,1],[-1,1]],金:[[0,-1],[1,-1],[-1,-1],[1,0],[-1,0],[0,1]],玉:[[0,-1],[1,-1],[-1,-1],[1,0],[-1,0],[0,1],[1,1],[-1,1]],馬:[[0,-1],[0,1],[1,0],[-1,0]],龍:[[1,-1],[-1,-1],[1,1],[-1,1]]};
 D.と=D.杏=D.圭=D.全=D.金;
 const S={香:[[0,-1]],角:[[1,-1],[-1,-1],[1,1],[-1,1]],馬:[[1,-1],[-1,-1],[1,1],[-1,1]],飛:[[0,-1],[0,1],[1,0],[-1,0]],龍:[[0,-1],[0,1],[1,0],[-1,0]]};
@@ -231,7 +272,7 @@ tr.addEventListener('wheel',e=>{if(e.ctrlKey){e.preventDefault();const r=tr.getB
 const zc=f=>{const r=tr.getBoundingClientRect();zoomTo(Z*f,r.width/2,r.height/2)};$('#zi').onclick=()=>zc(1.25);$('#zo').onclick=()=>zc(.8)}
 $('#b0').onclick=()=>{cur=g.root;sel=null;rGame()};$('#b1').onclick=()=>{if(cur.par){cur=cur.par;sel=null;rGame()}};
 $('#b2').onclick=()=>{if(cur.ch[0]){cur=cur.ch[0];sel=null;rGame()}};$('#b3').onclick=()=>{while(cur.ch[0])cur=cur.ch[0];sel=null;rGame()};
-$('#fl').onclick=()=>{flip=!flip;rGame()};$('#tb').onclick=()=>show('tree');$('#t1').onclick=()=>{tab=1;rGame()};$('#t2').onclick=()=>{tab=2;rGame()};
+$('#fl').onclick=()=>{flip=!flip;rGame()};$('#tb').onclick=()=>show('tree');$('#t1').onclick=()=>{tab=1;rGame()};$('#ba').onclick=()=>{tab=tab===2?1:2;rGame()};
 setSt('off');$('#cs').onclick=()=>{if(!cdb){window.fbLogin?window.fbLogin():toast('Firebaseの設定が未入力です')}else sheet([[(window.fbUser||'')+' でログイン中',()=>{}],['今すぐ同期',()=>sync()],['ログアウト',()=>window.fbLogout()]])};
 const ENGINE_URL='engine/yaneuraou.js';
 const EN={yn:null,ready:false,busy:false,pend:false,last:null,auto:true,ms:3000,src:'内蔵',node:null};let AN=null;
@@ -303,26 +344,23 @@ render();sync();
 </script>
 <script type="module">
 // ▼▼ Firebaseコンソール「プロジェクトの設定 > マイアプリ(ウェブ)」の値を貼り付け ▼▼
-  const firebaseConfig = {
-  apiKey: "AIzaSyBT63c41WkcbtK7Tl0IhEyBrTregWrAgYQ",
-  authDomain: "shogi-analyzer-b8b76.firebaseapp.com",
-  projectId: "shogi-analyzer-b8b76",
-  storageBucket: "shogi-analyzer-b8b76.firebasestorage.app",
-  messagingSenderId: "1010314509906",
-  appId: "1:1010314509906:web:0bff2e828752159ed2a98b",
-  measurementId: "G-Q321D1Q91E"
-};
+const GOOGLE_CLIENT_ID="YOUR_WEB_CLIENT_ID.apps.googleusercontent.com"; // Firebase > Authentication > Google > Web SDK設定 の「ウェブ クライアント ID」
+const firebaseConfig={apiKey:"YOUR_API_KEY",authDomain:"YOUR_PROJECT.firebaseapp.com",projectId:"YOUR_PROJECT_ID",appId:"YOUR_APP_ID"};
 // ▲▲▲
 if(!firebaseConfig.apiKey.startsWith('YOUR')){
 const V='10.14.1',B='https://www.gstatic.com/firebasejs/'+V+'/';
 const {initializeApp}=await import(B+'firebase-app.js');
-const {getAuth,GoogleAuthProvider,signInWithPopup,signInWithRedirect,signOut,onAuthStateChanged}=await import(B+'firebase-auth.js');
+const {getAuth,OAuthProvider,signInWithCredential,signOut,onAuthStateChanged}=await import(B+'firebase-auth.js');
 const {initializeFirestore,persistentLocalCache,collection,doc,setDoc,getDocs}=await import(B+'firebase-firestore.js');
 const app=initializeApp(firebaseConfig),auth=getAuth(app),fdb=initializeFirestore(app,{localCache:persistentLocalCache()});
 const shim={doc:p=>({set:d=>setDoc(doc(fdb,p),d)}),collection:p=>({get:()=>getDocs(collection(fdb,p))})};
-window.fbLogin=()=>signInWithRedirect(auth,new GoogleAuthProvider());
+window.fbLogin=async()=>{const raw=crypto.randomUUID()+crypto.randomUUID(),h=[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(raw)))].map(b=>b.toString(16).padStart(2,'0')).join('');
+sessionStorage.setItem('gn',raw);location.href='https://accounts.google.com/o/oauth2/v2/auth?'+new URLSearchParams({client_id:GOOGLE_CLIENT_ID,redirect_uri:location.origin+location.pathname,response_type:'id_token',scope:'openid email profile',nonce:h,prompt:'select_account'})};
 window.fbLogout=()=>signOut(auth);
 onAuthStateChanged(auth,u=>u?window.onLogin(u,shim):window.onLogout());
+{const t=location.hash.match(/id_token=([^&]+)/),er=location.hash.match(/error=([^&]+)/);
+if(t||er){history.replaceState(null,'',location.pathname+location.search);
+if(t){try{await signInWithCredential(auth,new OAuthProvider('google.com').credential({idToken:t[1],rawNonce:sessionStorage.getItem('gn')}))}catch(e){alert('ログイン失敗: '+(e.code||e.message))}}else alert('Googleログインエラー: '+er[1])}}
 }
 </script>
 </body></html>
