@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>棋譜ノートver.1.0.0</title>
+<title>棋譜ノート</title>
 <style>
 :root{--hd:#ffb74d;--hdt:#222;--bg:#fafafa;--fg:#222;--sub:#777;--ln:#ddd;--card:#fff;--ac:#e07b00;--bd:#f5d9a0;--bt:#d6a35a;--var:#e3f1fd;--varf:#0d47a1;--sel:#e0e0e0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--hd:#b36b00;--hdt:#fff;--bg:#1b1b1b;--fg:#eee;--sub:#aaa;--ln:#3a3a3a;--card:#262626;--ac:#ffb74d;--bd:#c9a46a;--bt:#8a6a3a;--var:#173149;--varf:#90caf9;--sel:#3a3a3a}}
@@ -88,9 +88,9 @@ body{max-width:none}
 }
 @font-face{font-family:'Shoryu';src:url('fonts/shoryu.woff2') format('woff2'),url('fonts/shoryu.ttf') format('truetype'),url('fonts/shoryu.otf') format('opentype');font-display:swap}
 </style><script>
-if(!self.crossOriginIsolated&&'serviceWorker' in navigator&&location.protocol==='https:'){navigator.serviceWorker.register('coi-sw.js').then(r=>{
-const go=()=>{if(!sessionStorage.getItem('coi')){sessionStorage.setItem('coi','1');location.reload()}};
-if(r.active&&!navigator.serviceWorker.controller)go();else if(!r.active)navigator.serviceWorker.addEventListener('controllerchange',go)}).catch(e=>console.warn('SW',e))}
+if(!self.crossOriginIsolated&&'serviceWorker' in navigator&&location.protocol==='https:'){const n=+sessionStorage.getItem('coi')||0,rl=()=>{if(n<3){sessionStorage.setItem('coi',n+1);location.reload()}};
+navigator.serviceWorker.addEventListener('controllerchange',rl);
+navigator.serviceWorker.register('coi-sw.js').then(r=>{r.update();if(r.active&&!navigator.serviceWorker.controller)rl()}).catch(e=>console.warn('SW',e))}
 </script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yuji+Boku&family=Yuji+Mai&family=Yuji+Syuku&family=Zen+Antique&text=%E6%AD%A9%E5%85%B5%E9%A6%99%E8%BB%8A%E6%A1%82%E9%A6%AC%E9%8A%80%E5%B0%87%E9%87%91%E7%8E%8B%E7%8E%89%E9%A3%9B%E8%A7%92%E9%BE%8D%E6%88%90%E3%81%A8%E5%85%A8%E5%9C%AD%E6%9D%8F&display=swap">
 </head><body>
@@ -329,7 +329,7 @@ async function enStart(){const o=$('#ens'),say=t=>o.textContent=t;try{say('エ�
 let ld=false;for(const u of ENGINE_URLS){ld=await new Promise(ok=>{const sc=document.createElement('script');sc.src=u;sc.onload=()=>ok(true);sc.onerror=()=>{sc.remove();ok(false)};document.head.append(sc)});if(ld)break}
 if(!ld)throw new Error('engine/ フォルダにエンジンが見つかりません');
 const fk=Object.keys(window).find(k=>/^YaneuraOu/i.test(k)&&typeof window[k]==='function');if(!fk)throw new Error('エンジンの読み込み関数が見つかりません');EN.F=window[fk];
-if(!self.crossOriginIsolated)say('警告: COOP/COEPヘッダーが未設定です。起動に失敗する場合があります。');
+if(typeof SharedArrayBuffer==='undefined')throw new Error('このページでは SharedArrayBuffer が使えません。ページを2回再読み込みしてください。直らない場合は、プライベートブラウズを避け、ホーム画面追加ではなくブラウザで開いてください。');
 const yn=await EN.F();EN.yn=yn;yn.addMessageListener(onLine);const P=t=>yn.postMessage(t),W=k=>new Promise(r=>{EN.w=l=>{if(l.startsWith(k)){EN.w=null;r()}}});
 let w=W('usiok');P('usi');await w;EN.src='内蔵';const nn=await idb('readonly','nn').catch(()=>null);
 if(nn){if(yn.FS&&yn.FS.writeFile){try{yn.FS.mkdir('/eval')}catch(e){}yn.FS.writeFile('/eval/nn.bin',new Uint8Array(nn));P('setoption name EvalDir value /eval');EN.src='nn.bin(水匠5)'}else say('このエンジンはファイルシステムを公開していないため、nn.binを渡せません。内蔵評価関数で動作します。')}
